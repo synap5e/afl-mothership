@@ -99,6 +99,7 @@ class AflInstance(threading.Thread):
 		for preload in os.listdir(os.path.join(self.campaign_directory, 'ld_preload')):
 			env['AFL_PRELOAD'] = os.path.join(self.campaign_directory, 'ld_preload', preload) + ' '
 		env['AFL_SKIP_CPUFREQ'] = 'True'
+		env['AFL_NO_AFFINITY'] = 'True'
 		# env['AFL_NO_VAR_CHECK'] = 'True'
 		if DEBUG:
 			self.process = subprocess.Popen(args, env=env, cwd=self.campaign_directory)
