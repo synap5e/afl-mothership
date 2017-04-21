@@ -81,7 +81,7 @@ class Model:
 		return model
 
 	def put(self):
-		db.session.add(self)
+		# db.session.add(self)
 		db.session.commit()
 
 	def delete(self):
